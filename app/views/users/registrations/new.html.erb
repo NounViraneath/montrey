@@ -1,0 +1,6 @@
+<div class="form-signup">
+	<%= render partial: 'application/sign_up_form'%>
+</div>
+<%= content_for :other_scripts do %>
+	<%= javascript_include_tag "registration.js" %>
+<% end %>

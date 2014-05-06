@@ -1,0 +1,35 @@
+<%= form_for(User.new, url: session_path(:user), :id => "form_login" ) do |f|%>
+    <h2 class="form-signin-heading" style="font-family: 'Nokora'">
+    	<%= t(:please)%><%= t(:sign_in)%>
+    	<span id="login-indicator" style="display: none;">
+    		<%=image_tag 'ajax-loader-small.gif', class: 'loader_image'%>
+    	</span>
+    </h2>
+
+    <div>
+        <span class="glyphicon glyphicon-user"></span>
+        <%= f.text_field :email, :autofocus => true, :style => 'display: inline; width: 250px;', :placeholder => t(:your_email), :class => "form-control"%>
+    </div>
+
+    <div>
+        <span class="glyphicon glyphicon-lock"></span>
+        <%= f.password_field :password, :style => 'display: inline; width: 250px;', :autofocus => false, :placeholder => t(:your_password), :class => "form-control"%>
+    </div>
+    
+    <label class="checkbox">
+      <input type="checkbox" value="remember-me"> <%= t(:remember_me)%>
+    </label>
+   	<a href="/users/password/new"><%=t(:forgot_your_password)%></a>
+
+    <div>
+        <div class="span2 offset3">
+            <%= f.submit t(:sign_in), :class => "btn btn-lg btn-primary btn-block" %>
+        </div>
+    </div>
+<% end %>
+
+<br>
+
+<div class="span2">
+	<%=link_to(t(:sign_up), new_user_registration_path, :class =>"btn btn-lg btn-warning btn-block", :role => "button")%>
+</div>

@@ -1,0 +1,141 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style 	scope.
+ *
+ *= require_self
+ *= require dataTables/jquery.dataTables
+ *= require dataTables/jquery.dataTables.bootstrap3
+ */
+
+$navbar-inverse-bg: #3b3b41;
+$dropdown-bg: #232326;
+$dropdown-link-color: white;
+@import "bootstrap";
+
+html{
+  overflow-y:scroll;
+}
+
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+  font-family: 'Nokora';
+}
+
+.form-control {
+  margin-bottom: 10px;
+}
+
+.form-signin, .form-signup{
+  max-width: 360px;
+  padding: 0px 29px 29px;
+  margin: 0 auto 20px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+
+.form-signup{
+  max-width: 420px;
+}
+
+.loader_image{
+  margin-top: -15px;
+}
+
+.tab-content {
+  background-color: white;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  -webkit-border-radius: 0px 0px 5px 5px;
+  -moz-border-radius: 0px 0px 5px 5px;
+  border-radius: 0px 0px 5px 5px;
+  padding: 15px;
+}
+
+.tab1_header{
+  font-size: 16px;
+  line-height: 16px;
+  border: 1px solid #f1f1f1;
+  border-bottom: 1px solid #fff;
+  margin-bottom: -1px;
+  padding: 10px;
+  background-color: #f4f4f4 100%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff 0%), to(#f4f4f4 100%));
+  background-image: -webkit-linear-gradient(top, #fff 0%, #f4f4f4 100%);
+  background-image: -moz-linear-gradient(top, #fff 0%, #f4f4f4 100%);
+  background-image: -o-linear-gradient(top, #fff 0%, #f4f4f4 100%);
+  background-image: -ms-linear-gradient(top, #fff 0%, #f4f4f4 100%);
+  background-image: linear-gradient(top, #fff 0%, #f4f4f4 100%);
+  -webkit-border-radius: 5px 5px 0px 0px;
+  -moz-border-radius: 5px 5px 0px 0px;
+  border-radius: 5px 5px 0px 0px;
+  overflow: hidden;
+}
+
+.tab_content{
+   border: 1px solid #f1f1f1;
+   border-top: 1px solid #fff;
+   padding: 10px;
+   padding-bottom: 40px;
+}
+
+.tab3_basic_info{
+  border: 1px solid #f1f1f1;
+  padding: 10px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.detail {
+  -webkit-border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  margin-top: 20px;
+  border: 1px solid #f1f1f1;
+  padding: 10px;
+  padding-bottom: 40px;
+}
+
+.mini_header{
+  background-color: #f1f1f1;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  border: 1px solid #f1f1f1;
+  padding: 10px;
+}
+
+td a{
+  display:block;
+  width:100%;
+  height:100%;
+  text-decoration: none;
+}
+
+#error_explanation{
+  display: none;
+}
+
+.info_list_item{
+  text-decoration: underline;
+  font-weight: lighter;
+}
+
+.info_list{
+  color: #428bca;
+}

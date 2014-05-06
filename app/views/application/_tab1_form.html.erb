@@ -1,0 +1,35 @@
+<div class="tab1_header">
+	<div class="tab1_title">
+		Course List
+	</div>
+</div>
+
+<div class="tab_content"  id='course' style="display: none;">
+	<table class="tab_table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Place</th>
+            <th>Start Date</th>
+            <th>Finish Date</th>
+            <th>Promoter</th>
+        </tr>
+    </thead>
+    <tbody>
+    	<% @courses.each do |f|%>
+    		<tr>
+    			<td class='name'><a href="javascript:void(0)"><%=f.title%></a></td>
+	            <td><%=f.destination%></td>
+	            <td><%=f.start_from.strftime("%d-%m-%Y")%></td>
+	            <td><%=f.end_at.strftime("%d-%m-%Y")%></td>
+	            <td><%=f.promoter%></td>
+    		</tr>
+    	<%end%>
+    </tbody>
+	</table>
+</div>
+
+<div class='detail course_detail col-md-12' style='display:none;'>
+	<a href="javascript:void(0)"><div class='remove_img' style='float: right;'><span class='glyphicon glyphicon-remove'></span></div></a>
+	<p class='content'></p>
+</div>	

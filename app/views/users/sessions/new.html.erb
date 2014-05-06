@@ -1,0 +1,6 @@
+<div class="form-signin">
+	<%= render partial: 'application/login_form'%>
+</div>
+<%= content_for :other_scripts do %>
+<%= javascript_include_tag "login_fail.js" %>
+<% end %>

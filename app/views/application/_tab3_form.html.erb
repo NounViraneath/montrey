@@ -1,0 +1,75 @@
+<div class="tab1_header col-md-12">
+	<div class="tab1_title">
+		My page
+	</div>
+</div>
+
+<div class="tab_content col-md-12" id='mypage'>
+	<div class="tab3_basic_info col-md-5">
+		<div class='mini_header'>
+			<b>Basic Information</b>
+			<a href="javascript:void(0)"><span class='glyphicon glyphicon-edit edit_img' style='float: right;'></span></a>
+		</div>
+		<table class="course_tab3"　cellspacing='3'>
+	    <tbody>
+	    	<tr>
+	    		<td rowspan="3"> 
+	    			<p style="padding:5px;">
+	    				<%if current_user.photo.blank?%>
+	    					<%=image_tag("photo_people.jpg", :size => "100x100", :alt => "photo")%>
+	    				<%else%>
+	    					<%=image_tag(url_for(action: "get_user_thumb", controller: "/application", id: "#{current_user.id}"), :size => "100x100", :class => "img-thumbnail", :alt => "photo")%>
+	    				<%end%>
+	    			</p>
+	    		</td>
+
+	    		<td>
+	    			<b>
+	    				<ul>
+	    					<li type="circle"><b class='info_list_item'><%=t(:name)%></b> <span class='info_list'><%=truncate(current_user.name)%></span></li>
+	    					<li type="circle"><b class='info_list_item'><%=t(:gender)%></b>
+	    						<span class='info_list'>
+	    							<%unless current_user.gender.blank?%>
+	    								<%=current_user.gender%>
+	    							<%else%>
+	    								-
+	    							<%end%>
+	    					</span>
+	    					</li>
+	    					<li type="circle"><b class='info_list_item'><%=t(:birthday)%></b>
+	    						<span class='info_list'>
+	    						<%unless current_user.date_of_birth.blank?%>	
+	    							<%=current_user.date_of_birth.strftime("%d-%m-%Y")%>
+	    						<%else%>
+	    							-
+	    						<%end%>
+	    						</span>
+	    					</li>
+	    					<li type="circle"><b class='info_list_item'><%=t(:email)%></b> <span class='info_list'><%=truncate(current_user.email, length: 20)%></span></li>
+	    					<li type="circle"><b class='info_list_item'><%=t(:phone)%></b> <span class='info_list'><%=truncate(current_user.phone)%></span></li>
+	    				</ul>
+	    			</b>	
+	    		</td>
+	    	</tr>
+	    	
+	    	
+	    </tbody>
+		</table>
+	</div>
+</div>
+
+<div class='detail mypage_detail col-md-12' style='display:none;'>
+	<a href="javascript:void(0)"><div class='remove_img' style='float: right;'><span class='glyphicon glyphicon-remove'></span></div></a>
+	<p class='content'>
+		<div class='col-md-4'>
+			<%= simple_form_for current_user, url: 'update_user' do |f| %>
+			<%= f.input :name %>
+			<%= f.input :email, placeholder: 'user@domain.com'%>
+			<%= f.input :phone, placeholder: '012-345-6789' %>
+			<%= f.input :photo %>
+			<%= f.button :submit, class: 'btn btn-primary' %>
+			<% end %>
+		</div>
+	</p>
+</div>	
+

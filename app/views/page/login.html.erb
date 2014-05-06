@@ -1,0 +1,8 @@
+<h2><center>Welcome to Montrey Training Page(Beta ver.01)</center></h2>
+<div class="form-signin">
+	<%= render partial: 'application/login_form'%>
+</div>
+
+<%= content_for :other_scripts do %>
+<%= javascript_include_tag "login.js" %>
+<% end %>

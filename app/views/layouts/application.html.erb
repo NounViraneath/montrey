@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MontreyTrain</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <link href='http://fonts.googleapis.com/css?family=Nokora' rel='stylesheet' type='text/css'>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<%= hidden_field_tag "noty_notice_msg", flash[:notice]%>
+	<%= hidden_field_tag "noty_alert_msg", flash[:alert]%>
+	<%= content_for?(:frame) ? yield(:frame) : yield %>
+
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+<%= yield :other_scripts %>
+</body>
+</html>

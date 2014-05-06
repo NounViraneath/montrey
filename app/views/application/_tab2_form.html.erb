@@ -1,0 +1,32 @@
+<div class="tab1_header">
+	<div class="tab1_title">
+		Course List
+	</div>
+</div>
+
+<div class="tab_content" id='member' style="display: none;">
+	<table class="tab_table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+
+        </tr>
+    </thead>
+    <tbody>
+    	<% @users.each do |f|%>
+    		<tr>
+    			<td class='name'><a href="javascript:void(0)"><%=f.name%></a></td>
+				<td><%=f.email%></td>
+				<td><%=f.phone%></td>
+    		</tr>
+    	<%end%>
+    </tbody>
+</table>
+</div>
+
+<div class='detail member_detail col-md-12' style='display:none;'>
+	<a href="javascript:void(0)"><div class='remove_img' style='float: right;'><span class='glyphicon glyphicon-remove'></span></div></a>
+	<p class='content'></p>
+</div>	

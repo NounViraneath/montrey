@@ -1,0 +1,18 @@
+<%= devise_error_messages! %>
+<h2 class="form-signin-heading" style="font-family: 'Nokora'">
+	<%= t(:please)%><%= t(:sign_up)%>
+</h2>
+<%= simple_form_for :user, url: registration_path(:user) do |f| %>
+	<%= f.input :name, autofocus: true, placeholder: 'your name', label: t(:name) %>
+	<%= f.input :gender, collection: [:male, :female], label: t(:gender) %>
+	<%= f.input :date_of_birth, as: :date, start_year: Date.today.year - 75,
+                              end_year: Date.today.year - 10, discard_day: false,
+                              order: [:day, :month, :year], :input_html => {:style=> 'width:80px; display: inline;'}, label: t(:birthday)%>
+	<%= f.input :email, placeholder: 'user@domain.com', label: t(:email)%>
+	<%= f.input :phone, placeholder: '012-345-6789', label: t(:phone) %>
+	<%= f.input :password, input_html: { :autocomplete => "off" }, label: t(:password)%>
+	<%= f.input :password_confirmation, input_html: { :autocomplete => "off"}, label: t(:password_again)%>
+	<%= f.submit t(:sign_up), class: 'btn btn-primary' %>
+<% end %>
+
+<%=link_to(t(:back), :login_page, :style => 'float: right;')%>
